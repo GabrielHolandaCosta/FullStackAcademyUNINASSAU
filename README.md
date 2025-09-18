@@ -2,7 +2,7 @@
 
 Repositório criado para armazenar os exercícios e projetos desenvolvidos durante a disciplina de **Full Stack Development (UNINASSAU)**.
 
-Aqui você encontrará a evolução dos estudos em **Frontend (HTML, CSS, JavaScript, Bootstrap)** e **Backend (Python, Django)**.
+Aqui você encontrará a evolução dos estudos em **Frontend (HTML, CSS, JavaScript, Bootstrap, Vue.js)** e **Backend (Python, Django)**.
 
 ---
 
@@ -26,6 +26,17 @@ Aqui você encontrará a evolução dos estudos em **Frontend (HTML, CSS, JavaSc
   - Tela de login (reaproveitada do ex01)  
   - Listagem de pessoas no template com Bootstrap  
 
+- **ex03 21-09-2025** → Relacionamentos entre classes no Django  
+  - Modelo `Pessoa` vinculado a `User`  
+  - Modelo `Endereco` relacionado a `Pessoa`  
+  - Listagem em template mostrando nome, usuário e endereço  
+
+- **ex04 21-09-2025** → Página de vendas com Vue.js  
+  - Diretivas `v-if`, `v-show`, `v-for`, `v-on`, `v-bind`  
+  - Exibição de produtos e valores  
+  - Adição de itens ao carrinho  
+  - Exibição da opção de pagamento somente se houver itens no carrinho  
+
 ---
 
 ## 🚀 Tecnologias utilizadas
@@ -33,6 +44,7 @@ Aqui você encontrará a evolução dos estudos em **Frontend (HTML, CSS, JavaSc
 - Django  
 - Bootstrap  
 - HTML, CSS e JavaScript  
+- Vue.js  
 - Git e GitHub  
 
 ---
