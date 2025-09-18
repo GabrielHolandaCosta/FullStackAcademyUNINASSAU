@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pessoas</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f4f7f8;
+            color: #333;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background-color: #3498db;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        li {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        li strong {
+            color: #2c3e50;
+        }
+
+        li p {
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 15px 0;
+        }
+
+        /* Animação suave ao carregar */
+        li {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        li:nth-child(1) { animation-delay: 0.1s; }
+        li:nth-child(2) { animation-delay: 0.2s; }
+        li:nth-child(3) { animation-delay: 0.3s; }
+        li:nth-child(4) { animation-delay: 0.4s; }
+        li:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Pessoas Cadastradas</h1>
+    <ul>
+        {% for pessoa in pessoas %}
+        <li>
+            <p><strong>Nome:</strong> {{ pessoa.nome }}</p>
+            <p><strong>Usuário:</strong> {{ pessoa.usuario.username }}</p>
+            <p><strong>Endereço:</strong> 
+                {% if pessoa.endereco %}
+                    {{ pessoa.endereco.rua }}, {{ pessoa.endereco.numero }}, {{ pessoa.endereco.bairro }} - {{ pessoa.endereco.cidade }}/{{ pessoa.endereco.estado }} CEP: {{ pessoa.endereco.cep }}
+                {% else %}
+                    Não cadastrado
+                {% endif %}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
