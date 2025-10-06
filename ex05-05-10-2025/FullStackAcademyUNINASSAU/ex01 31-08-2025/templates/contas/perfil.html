@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Meu Perfil{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center my-5">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm p-4 text-center">
+            <div class="card-body">
+                <i class="fas fa-user-circle fa-5x text-primary mb-3"></i>
+                <h1 class="card-title fw-bold">Olá, {{ user.username }}!</h1>
+                <p class="lead">Seja bem-vindo ao seu perfil.</p>
+                <hr class="my-4">
+                <div class="mt-4">
+                    <p class="fs-5">Aqui estão seus dados:</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Usuário:</strong>
+                            <span>{{ user.username }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>E-mail:</strong>
+                            <span>{{ user.email }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
