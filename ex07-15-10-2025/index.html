@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interpolação e Diretivas Vue.js</title>
+  <!-- Biblioteca Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ titulo }}</h1>
+    <p>Aluno: {{ nome }}</p>
+    <p>Curso: {{ curso }}</p>
+    <p>Ano: {{ ano }}</p>
+
+    <hr>
+
+    <!-- v-if -->
+    <p v-if="exibirMensagem">Esta mensagem aparece se exibirMensagem for verdadeiro.</p>
+
+    <!-- v-show -->
+    <p v-show="mostrarTexto">Texto exibido com v-show.</p>
+
+    <!-- v-for -->
+    <ul>
+      <li v-for="(linguagem, index) in linguagens" :key="index">
+        {{ index + 1 }} - {{ linguagem }}
+      </li>
+    </ul>
+
+    <!-- v-bind -->
+    <img :src="imagem" :alt="descricaoImagem" width="200">
+
+    <!-- v-on -->
+    <button v-on:click="mudarMensagem">Clique para mudar mensagem</button>
+    <p>{{ mensagemBotao }}</p>
+
+    <!-- v-model -->
+    <h3>v-model (ligação de dados)</h3>
+    <input type="text" v-model="nome" placeholder="Digite seu nome">
+    <p>Nome digitado: {{ nome }}</p>
+  </div>
+
+  <!-- Script principal -->
+  <script src="app.js"></script>
+</body>
+</html>
