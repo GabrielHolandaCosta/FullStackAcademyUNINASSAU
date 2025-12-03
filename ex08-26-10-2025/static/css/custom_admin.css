@@ -1,0 +1,11 @@
+/* Dark mode tweaks and spacing */
+body.dark-mode { background:#121212; color:#e6eef8; }
+.main-header .navbar-brand { font-weight:600; }
+.content-wrapper { background: linear-gradient(180deg, #0b1020 0%, #0f1724 100%); padding: 1.5rem; }
+.card { background: rgba(255,255,255,0.03); border-radius: 12px; box-shadow: 0 6px 18px rgba(2,6,23,0.6); }
+/* Tables */
+table{ color:#dbeafe; }
+.table thead th{ color:#c7d2fe; }
+/* Buttons */
+.btn-primary { background-color:#5b21b6; border-color:#5b21b6; }
+.brand-image { filter: invert(1) contrast(1.2); }

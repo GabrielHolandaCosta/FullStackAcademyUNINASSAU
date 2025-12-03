@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Você saiu{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 text-center">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Você saiu com sucesso!</h4>
+            <p>Obrigado por usar a nossa plataforma.</p>
+            <hr>
+            <p class="mb-0">
+                <a href="{% url 'login' %}">Clique aqui para fazer login novamente.</a>
+            </p>
+        </div>
+    </div>
+{% endblock content %}

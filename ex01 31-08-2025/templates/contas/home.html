@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<div class="card text-center shadow-sm p-5 my-5">
+    <div class="card-body">
+        <h1 class="display-4 fw-bold">Bem-vindo à Home Page</h1>
+        <p class="lead">Seu site Django com Bootstrap está funcionando!</p>
+        <hr class="my-4">
+        {% if user.is_authenticated %}
+        <p class="fs-5">Olá, <span class="fw-bold">{{ user.username }}</span>!</p>
+        <p>Você está logado. <a href="{% url 'perfil' %}" class="btn btn-sm btn-outline-primary mt-2">Ver perfil</a></p>
+        {% else %}
+        <p class="text-muted">Você não está logado.</p>
+        <a class="btn btn-primary btn-lg mt-3 me-2" href="{% url 'login' %}" role="button">
+            <i class="fas fa-sign-in-alt"></i> Fazer Login
+        </a>
+        <a class="btn btn-secondary btn-lg mt-3" href="{% url 'cadastro' %}" role="button">
+            <i class="fas fa-user-plus"></i> Cadastre-se
+        </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center py-5">
+  <h1 class="display-1 text-danger">500</h1>
+  <h3>Erro no servidor</h3>
+  <p>Algo deu errado. Tente novamente mais tarde.</p>
+  <a href="{% url 'home' %}" class="btn btn-primary mt-3">Home</a>
+</div>
+{% endblock %}
